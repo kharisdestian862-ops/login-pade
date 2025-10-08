@@ -6,14 +6,16 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  background-color: #f7fcfa;
 }
 
 .container {
   display: flex;
   width: 100%;
   height: 100vh;
+  flex-wrap: wrap;
 }
 
 /* === Left Section === */
@@ -134,29 +136,10 @@ button:hover {
   width: 20px;
 }
 
-/* === RESPONSIVE DESIGN === */
+/* === RESPONSIVE FIX === */
 
-/* Tablet */
-@media (max-width: 1024px) {
-  .left-section h1 {
-    font-size: 24px;
-  }
-
-  .left-section p {
-    font-size: 14px;
-  }
-
-  .logo {
-    font-size: 24px;
-  }
-
-  button {
-    font-size: 15px;
-  }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
+/* Mobile & Tablet */
+@media (max-width: 900px) {
   body {
     height: auto;
   }
@@ -168,7 +151,10 @@ button:hover {
 
   .left-section {
     flex: none;
+    width: 100%;
     padding: 30px 20px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
   }
 
   .left-section img {
@@ -185,6 +171,7 @@ button:hover {
 
   .right-section {
     flex: none;
+    width: 100%;
     padding: 30px 20px;
   }
 
@@ -192,24 +179,35 @@ button:hover {
     max-width: 100%;
   }
 
+  .logo {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
   button {
     font-size: 15px;
   }
 }
 
-/* Extra small devices (HP kecil banget) */
+/* HP kecil banget (≤480px) */
 @media (max-width: 480px) {
-  .left-section {
-    display: none; /* Sembunyikan ilustrasi biar hemat ruang */
+  .left-section img {
+    width: 100px;
   }
 
-  .right-section {
-    width: 100%;
-    padding: 20px;
+  .left-section h1 {
+    font-size: 20px;
+  }
+
+  .left-section p {
+    font-size: 12px;
   }
 
   .logo {
-    margin-bottom: 20px;
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .right-section {
+    padding: 20px;
   }
 }
